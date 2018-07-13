@@ -3,8 +3,20 @@ Nicer New Gmail Theme
 
 This is a theme for the new (2018) Gmail theme to remove a lot of the
 visual inconsistencies and overuse of whitespace, helping to create a
-clean visual style that more closely mirrors the rest of Google's
-product suite.
+clean visual style that more closely mirrors the rest of Google's product
+suite. Actions are all aligned, tabs are more well-defined, and colors are
+consistent.
+
+Note that you must be using the new **2018 version of Gmail** (currently beta
+as of this writing) for this to work. If the style seems to break Gmail, you're
+likely not running the new version.
+
+You should also select the **Light theme** (usually the default) from Gmail's
+theme selector to ensure some standard base styles.
+
+
+Installing the Theme
+--------------------
 
 The theme comes in two forms:
 
@@ -12,13 +24,14 @@ The theme comes in two forms:
   that you can apply in your browser, with customizable color options.
 
 * A [Kiwi for Gmail](https://www.kiwiforgmail.com/) theme, which can be
-  applied by generating and running a script (see the releases tab).
+  applied by downloading and running the script from the releases tab.
 
 
-Generating the Theme
---------------------
+Modifying the Theme
+-------------------
 
-To generate the theme, simply run:
+If you want to make your own modifications, you can edit the file in
+`src/theme.css` and then re-generate using:
 
     $ make
 

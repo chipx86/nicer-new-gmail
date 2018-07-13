@@ -1,0 +1,34 @@
+--- onloadstart.js
++++ onloadstart.js
+@@ -687,6 +687,8 @@
+                 this.style = this.style.replace('div.asT-asx { background: none !important; color: rgb(82, 82, 82); font-size:7pt; transform: scale(1, .55); line-height: 1; } div.asT-asx:before { content: "\\25BC"; } .ake,.akh { color:' + zdp.style.theme.basecolor + ' !important; }', '')
+                 this.style = this.style.replace('div.asT-asx { background: none !important; color:' + zdp.style.theme.basecolor + '; font-size:7pt; transform: scale(1, .55); line-height: 1; } div.asT-asx:before { content: "\\25BC"; }', '')
+             }
++
++            zdp.loadCustomCSS();
+         },
+         updateStyles: function () {
+             var element = this.getElement()
+@@ -1539,3 +1541,22 @@
+         }
+     })
+ }
++
++zdp.loadCustomCSS = function() {
++    notifyBrowserWithCallback('GetResourceAsString', 'custom.css',
++                              function(style) {
++        var el;
++
++        style = style.replace('/*[[main_theme_color]]*/',
++                              zdp.style.theme.basecolor)
++
++        el = document.getElementById('custom_css_style');
++
++        if (!el) {
++            el = document.createElement('style');
++            document.getElementsByTagName('head')[0].appendChild(el);
++        }
++
++        el.textContent = style;
++    });
++}
